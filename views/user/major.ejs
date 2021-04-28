@@ -1,0 +1,47 @@
+
+<link rel="stylesheet" href="/css/user.css">
+
+<%- include('../user/partials/header'); %>
+<body>
+  <!--Main Navigation-->
+  <%- include('../user/partials/sidebar'); %>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+  
+ 
+        <h1 class="display-4"> Major</h1>
+            <h2>Reviewers: </h2>
+        <hr>
+
+        <div class="row">
+
+         <% title.forEach( (box) =>{ %>
+            <div class="col-11 col-sm-3 box">
+                  <%= box.title %> <br>
+                  <p style="font-size: 12px;">500 Students have taken this reviewer</p>
+                  <a href="/quiz/quizTitle/<%= box._id %>" class="btn btn-success"> View </a>
+                 
+            </div>
+            <%   }) %>
+         
+          
+        </div>
+        
+       
+      
+
+    
+    </div>
+  </main>
+  <!--Main layout-->
+ 
+
+
+  <script src="/js/user.js">
+
+  </script>
+
+  <%- include('../user/partials/footer'); %>

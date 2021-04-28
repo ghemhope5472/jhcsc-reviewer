@@ -1,0 +1,59 @@
+.col-12{
+    border-radius: 0px !important;
+    background-color: #f4f4f8 !important;
+}
+.outer{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px;
+}
+.imgBox{
+    width: 25%;
+    
+}
+.imgBox img{
+    height: 50px;
+}
+.wordBox{
+    width: 68%;
+    font-weight: 100;
+    
+}
+.iconBox{
+    
+    width: 7%;
+}
+.innerBox{
+    display: flex;
+    flex-direction: row;
+}
+.commentBox{
+    border-top: 1px solid rgba(172, 170, 170, 0.5);
+}
+.timeBox{
+    padding: 5px;
+    font-size: small;
+}
+.form-control{
+    outline: none !important;
+    border: none !important;
+}
+.commentTitle{
+    font-size: 12px;
+}
+.scoreText{
+    font-weight: 500;
+}
+.comment-button{
+    background-color: green;
+    margin-top: 10px;
+
+}
+.hero{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

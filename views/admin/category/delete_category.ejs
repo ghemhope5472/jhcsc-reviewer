@@ -1,0 +1,41 @@
+
+     
+<%- include('../partials/header'); %>
+<link rel="stylesheet" href="/css/manage_questions.css">
+ 
+<body>
+  <!--Main Navigation-->
+  <%- include('../partials/sidebar'); %>
+  <!--Main Navigation-->
+
+
+
+
+
+<main style="margin-top: 58px"> 
+    <div class="container pt-4">
+
+
+        <h2>
+           Confirm deletion of <%= title.title %>
+        </h2>
+        <h4 style="font-weight: 200;">
+            Deleting <%= title.title %> will delete all the questions inside this Reviewer Title
+        </h4>
+
+ <form action="/quiz/quiztitle/gen_ed/delete/<%= title._id %>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete" class="btn btn-danger btn-lg">                    
+  </form>
+
+
+
+
+
+  </div>
+  </main>
+
+
+
+
+
+  <%- include('../partials/footer'); %>

@@ -1,0 +1,55 @@
+
+
+<link rel="stylesheet" href="/css/user-dashboard.css">
+
+
+
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+        <h3>Mock Exam</h3>
+
+        <button class="btn btn-success btn-lg"> Start Mock Exam!</button>
+ 
+        <div class="container">
+            <div id="quiz"></div>
+            <button class="btn btn-success" id="submit">Submit Quiz</button>
+            <div id="results"></div>
+
+            <br>
+
+            <form action="/quiz" method="POST">
+                <input id="outPut" name="score" type="text" placeholder="Score" value="" readonly>
+                <br><br>
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="text-center">
+
+                            <button id="saveBtn" class="btn btn-danger" style="display: none;"> Save Score </button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+     
+    
+    </div>
+  </main>
+  <!--Main layout-->
+       
+
+
+<script src="/js/user.js"></script>
+<script src="/js/mock-exam.js"></script>
+
+
+
+  
+

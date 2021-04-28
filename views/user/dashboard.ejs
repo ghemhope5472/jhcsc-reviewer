@@ -1,0 +1,151 @@
+
+
+<link rel="stylesheet" href="/css/user-dashboard.css">
+<%- include('../user/partials/header'); %>
+<body>
+  <!--Main Navigation-->
+  <% if(user.role === "ADMIN"){ %>
+    <%- include('../admin/partials/sidebar'); %>
+    <%} else{ %>
+    <%- include('../user/partials/sidebar'); %>
+    <%} %>
+ 
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+  
+ 
+        
+        <hr>
+
+         
+        <div class="row">
+
+          <% score.forEach( (score) => { %>
+
+
+          <div class="col-12 col-sm-7 outer">
+            <div class="timeBox">  <%= score.Scoredate.toDateString() %> <%= score.Scoredate.toLocaleTimeString() %> </div>
+              <div class="innerBox">
+                
+                    <div class="imgBox">
+                      <img src="<%= score.userThumbnail %>" alt="pic" class="rounded-circle">
+                    </div>
+                    <div class="wordBox">
+                        <%= score.userName %> <br>
+                       <span class="scoreText">
+                        Scored  <%= score.score %> out of <%= score.quizLength %> questions
+                       </span> <br>   in
+                        <%= score.title %>  ( <%= score.cat %> - <%= score.examType %>) <br>
+                    </div>
+                    
+                    <div class="iconBox"></div>
+              </div>
+
+                          <div class=""> <span class=""> 
+                            <span class="likeMsg" style="font-size: 10px;"> <%= score.likes.length %> users like this</span> 
+                                    
+                        <%   if(score.likes.includes( user._id )){ %>
+
+                          <form action="/users/unlike/<%= score._id %>?_method=PUT" method="POST"> 
+                            <div class="optionBtn"> 
+                           <button style="text-decoration: none; color: rgb(153, 158, 161);
+                                  outline: none;border: none;background-color: inherit; display: inline;font-size: 12px;"
+                                  data-toggle="tooltip" data-placement="bottom" title="Unlike this post"> 
+                                Unlike 
+                            </button>
+                          </div> <!-- optionBTn end-->
+                              
+                              
+                          </form>
+                      <%  }else{  %>
+                            <form action="/users/like/<%= score._id %>?_method=PUT" method="POST">        
+                              <button style="text-decoration: none; color: rgb(24, 106, 173);
+                              outline: none;border: none;background-color: inherit;"
+                              data-toggle="tooltip" data-placement="bottom" title="Like this post"> 
+                              <i class="far fa-thumbs-up" style="font-size: 15px;"></i> 
+                              </button>
+                            
+                            </form>
+                          
+                      <%  }  %>
+                          </span> 
+              <div class="commentBox"> <span class="commentTitle"> Comment </span> 
+                <br>
+                <div class="form-group">
+                  <form action="/users/add/<%= score._id %>" method="POST">
+                    <input type="text" name="msg" id="" class="form-control" required autocomplete="off">
+                          <div>
+                            <button class="comment-button btn btn-success btn-xs" > Post </button>
+                          </form>
+                          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse<%= score._id %>" aria-expanded="false" aria-controls="collapseExample">
+                            
+                            <i class="far fa-comments"></i> 
+                                <span class="badge badge-primary">
+                                  <%= score.comment.length %>
+                               </span>
+                          </button>
+        
+                          </div>
+                </div>
+                <% score.comment.forEach( (comment) => { %>
+                      <div class="commenSection collapse in"  id="collapse<%= score._id %>" style="border-bottom: 1px solid rgba(158, 157, 157, 0.568);padding: 10px;">
+                          <div class="img">
+                              <img src="<%= comment.userThumbnail %>" alt="user-pic" height="20px">
+                          </div>
+                          <div class="msg">
+                            <%= comment.msg %>  
+                          </div>
+                          <div class="username">
+                            <span id="username"><%= comment.userName %> <br> <%= comment.timeStamp.toDateString() %>   <%= comment.timeStamp.toLocaleTimeString() %>  </span>
+                          </div>
+                        
+                           
+                           
+                      </div>
+                     
+                <% }) %>
+                
+              </div>
+
+              
+          </div>
+
+
+          
+         
+        </div>
+
+
+        <% }) %>
+      
+          
+     
+
+
+        
+
+      
+
+    
+    </div>
+  </main>
+  <!--Main layout-->
+ 
+
+
+  <script src="/js/user.js">
+
+  </script>
+
+<script>
+
+
+
+
+</script>
+  
+
+  <%- include('../user/partials/footer'); %>

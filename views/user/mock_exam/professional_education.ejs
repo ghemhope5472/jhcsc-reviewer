@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/user.css">
+
+<%- include('../partials/header'); %>
+<body>
+  <!--Main Navigation-->
+  <%- include('../partials/sidebar'); %>
+  <!--Main Navigation-->
+
+
+
+
+<main style="margin-top: 58px;">
+    <div class="container pt-4" >
+
+        <h1 class="display-4"> Professional Education</h1>
+        <h2>Mock Exam: </h2>
+        
+
+        
+       <div class="row">
+        <% title.forEach( (box) =>{ %>
+            <div class="col-11 col-sm-3 box">
+                  <%= box.title %> <br>
+                
+                  <a href="/users/mock_exam/title/<%= box._id %>" class="btn btn-success"> Take Mock Exam </a>
+                 
+            </div>
+        <%   }) %>
+       </div>
+    
+    
+    </div>
+
+
+</main>
+
+
+
+<%- include('../partials/footer'); %>

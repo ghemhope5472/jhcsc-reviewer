@@ -1,0 +1,115 @@
+
+     
+<%- include('../partials/header'); %>
+<link rel="stylesheet" href="/css/manage_questions.css">
+ 
+<body>
+  <!--Main Navigation-->
+  <%- include('../partials/sidebar'); %>
+  <!--Main Navigation-->
+    
+
+  <main style="margin-top: 58px"> 
+    <div class="container pt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"> <a href="/admin/manage_questions">Category</a></li>
+              <% var categoryUrl = ''; %>
+              <% if( questions.category === "General Education"){ %>
+                <% categoryUrl = "general_education"; %>
+                <% } else if ( questions.category === "Professional Education"){ %>
+                  <% categoryUrl = "prof_education"; %>
+                  <% } else if( questions.category = "Major"){ %>%>
+                    <%   categoryUrl = "major"; %>
+                    <% } %>
+
+              <li class="breadcrumb-item"> <a href="/quiz/<%= categoryUrl %>"> <%= questions.category %> </a></li>
+              <li class="breadcrumb-item"> <a href="/quiz/category/quiztitle/<%= questions._id %>"> <%= questions.title %> </a> </li>
+              <li class="breadcrumb-item"> View Questions</li>
+             
+            </ol>
+          </nav>
+
+
+
+            <h2> <%= questions.category %> </h2>
+            <h5> <%= questions.title %> </h5>
+            
+
+            <% questions.questions.forEach( (question, index) => { %>
+                
+                <div class="col-12 questionBox">
+                   <p class="question"> <%= index + 1 %> . <%= question.question %> </p> 
+                    
+                            <% question.answers.forEach( (answer) => { %>
+                                <div class="row">
+                                    <div class="col-12 col-sm-10 answerBox">
+                                        <a class="spacing" href="#"> <%= answer.text %>  </a>
+                                    </div>
+                                </div>  
+                                
+                            <%   }) %>
+                        
+                            <% question.answers.forEach( (answer) => { %>
+                                <div class="row">
+                                    <div class="col-12 col-sm-10 answerBox">
+                                    
+                                        <% if(answer.correct === true){ %>
+                                            <p class="correctAnswer"> Correct Answer :  <%= answer.text %></p>
+                                            
+                                            <% }  %>
+                                    </div>
+                                </div>     
+                            <%   }) %>
+                        <div class="options">
+                             <a href="/quiz/category/quiztitle/<%= questions._id %>/edit_question/<%= question._id %>" class="btn btn-warning buttonOptions"><i class="fas fa-edit"></i> </a>
+                        
+                             <form action="/quiz/quiztitle/<%= questions._id %>/question/delete/<%= question._id %>?_method=DELETE" method="POST" class="options">
+                               
+                                     <input type="submit" class="btn btn-danger" value="Delete">
+
+                             </form>
+                        </div> 
+                </div>
+                
+           <% }) %>
+    
+      
+
+        
+
+      
+        
+    </div>
+</main>
+   
+
+
+
+
+
+
+
+<script src="/js/user.js">
+
+</script>
+<%- include('../partials/footer'); %>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+   

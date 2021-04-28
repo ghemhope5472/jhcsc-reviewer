@@ -1,0 +1,88 @@
+
+     
+<%- include('../partials/header'); %>
+<link rel="stylesheet" href="/css/manage_questions.css">
+ 
+<body>
+  <!--Main Navigation-->
+  <%- include('../partials/sidebar'); %>
+  <!--Main Navigation-->
+    
+
+  <main style="margin-top: 58px"> 
+    <div class="container pt-4">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"> <a href="/admin/manage_questions">Category</a></li>
+                  <% var categoryUrl = ''; %>
+                  <% if( title.category === "General Education"){ %>
+                    <% categoryUrl = "general_education"; %>
+                    <% } else if ( title.category === "Professional Education"){ %>
+                      <% categoryUrl = "prof_education"; %>
+                      <% } else if( title.category = "Major"){ %>%>
+                        <%   categoryUrl = "major"; %>
+                        <% } %>
+                  <li class="breadcrumb-item"> <a href="/quiz/<%= categoryUrl %>"> <%= title.category %>  </a></li>
+                  <li class="breadcrumb-item">  <%= title.title %></li>
+                 
+                </ol>
+              </nav>
+
+
+
+            <h1><%= title.category %></h1>
+            <h2><%= title.title %></h2>
+
+           
+        
+            <div class="row">
+
+
+                <div class="col-12">
+                    <a href="/quiz/category/quiztitle/<%= title._id %>/viewquestions" class="btn btn-success"> View questions </a>
+                   
+                    <a href="/quiz/category/quiztitle/<%= title._id %>/addquestion" class="btn btn-danger"> Add questions </a>
+                </div>
+            </div>
+        </div>
+
+      
+
+        
+
+      
+        
+    </div>
+</main>
+   
+
+
+
+
+
+
+
+<script src="/js/user.js">
+
+</script>
+<%- include('../partials/footer'); %>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+   

@@ -1,0 +1,70 @@
+
+
+
+
+<%- include('../admin/partials/header'); %>
+<body>
+  <!--Main Navigation-->
+  <%- include('../admin/partials/sidebar'); %>
+  <!--Main Navigation-->
+
+
+ <!--Main layout-->
+ <main style="margin-top: 58px">
+  <div class="container pt-4">
+  
+  
+
+
+    <!--Section: Minimal statistics cards-->
+   <section> 
+     <%- include('../partials/messages'); %>
+       <h3>Pending Users </h3>
+       
+         
+       
+      
+            
+            
+      <div class="row">
+
+          <% unverified_user.forEach( function(user) { %>
+              <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between px-md-1">
+                        <div class="align-self-center">
+                          <img src="<%= user.thumbnail %>" height="50px" class="">
+                        </div>
+                        <div class="text-end">
+                          <h6> <%= user.name %> </h6>
+                          <p style="font-size: 10px;"> <%= user.date.toLocaleDateString() %></p>
+                          <a href="/admin/user/<%= user.id %>" class="btn btn-success" > Accept </a>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% } )  %>
+
+       
+        
+      
+        
+    
+    
+    </section> 
+    <!--Section: Minimal statistics cards-->
+
+  
+  </div>
+</main>
+<!--Main layout-->
+
+
+<script src="/js/user.js">
+
+</script>
+
+<%- include('../admin/partials/footer'); %>

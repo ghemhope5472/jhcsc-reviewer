@@ -1,0 +1,121 @@
+
+
+
+<%- include('../user/partials/header'); %>
+<body style="background-color: #FEFEFE;">
+  <!--Main Navigation-->
+  <%- include('../user/partials/sidebar'); %>
+  <!--Main Navigation-->
+
+
+ 
+  <main style="margin-top: 58px;">
+    <div class="container pt-4" >
+          <div>
+              <h3> <%= title.category %></h3>
+              <h4> <%= title.title %></h4>
+              <h6> No. of Questions:  <span id="questionBox"></span> </h6>
+               <p class="ID" id="titleId"><%= title._id %></p>
+               <p class="ID" id="userId"><%= user._id %></p>
+               <hr>
+            <p class="scoreText">Score:  <span id="scoreBox"> </span></p>
+          </div>
+            <div id="questionsContainer" class="hide animate__animated animate__backInRight">
+                <div id="question">Question</div>
+                <div id="question_image">
+                  <img id="qImg" src="" alt="question_img" class="img-fluid">
+                </div>
+                <div id="answer_image" style="margin-top: 10px;">
+                  <img id="aImg" src="" alt="answer_image" class="img-fluid">
+                </div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn btnq">Answer 1</button>
+                    <button class="btn btnq">Answer 2</button>
+                    <button class="btn btnq">Answer 3</button>
+                    <button class="btn btnq">Answer 4</button>
+                </div>
+               
+            </div>
+          
+            <p id="resultMessage"></p>
+            
+            <div class="controls"> 
+                <button id="start-button" class="start-btn btn btn-success btn-lg">Start</button>
+                <button id="next-button" class="next-btn btn hide">Next</button>
+                <button id="save-button" class="next-btn btn hide">Save Score</button>
+            </div>
+            <div id="explanationDiv" class="hide"> 
+              <p>Explanation</p>
+            </div>
+
+
+
+            <audio id="correct">
+              <source src="/audio/correct.ogg" type="audio/ogg">
+            </audio>
+            <audio id="wrong">
+              <source src="/audio/wrong.ogg" type="audio/ogg">
+            </audio>
+
+     
+  
+     
+     
+
+    
+    </div>
+  </main>
+  
+
+
+
+
+  
+
+<!-- Modal -->
+<div class="modal fade" 
+id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Result</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <span class="congrats"> Congratulations! <%= user.name %> </span>  <br>
+          
+          <form action="/users/<%= user._id %>/title/<%= title._id %>" method="POST">
+            You got <span id="scoreDisplay"></span> correct answers! 
+            Out of 
+            <input type="number" class="fromForm" name="no_of_items" id="quizlength" readonly>
+            
+            <br>
+            Category: <input type="text" class="fromForm" value="<%= title.category %>" name="cat">
+            <br>
+            Reviewer Title: <input type="text" class="fromForm" value="<%= title.title %>" name="title">
+            
+            <input type="number" id="stbs" name="stbs">
+            
+          
+      </div>
+      <div class="modal-footer">
+         <a href="/quiz/quizTitle/<%= title._id %>" class="btn btn-success"> Cancel </a>
+         <input type="submit" value="Save Result" class="btn btn-primary">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/mdb.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/js/quiz.js"></script>
+
+

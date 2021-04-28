@@ -1,0 +1,170 @@
+<link rel="stylesheet" href="/css/add_new_question.css">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>    
+<%- include('../partials/header'); %>
+
+ 
+<body>
+  <!--Main Navigation-->
+  <%- include('../partials/sidebar'); %>
+  <!--Main Navigation-->
+    
+
+  <main style="margin-top: 58px"> 
+    <div class="container pt-4">
+      
+        
+
+<div class="container mt-4 mb-4">
+    <div class="row">
+        <div class="row">
+            <% if(success_msg != ''){  %>
+            
+                
+                    <div class="alert alert-danger alertDialog" role="alert">
+                        <%= success_msg %>
+                      </div>
+                      <%  }else { %>    
+            
+            <%   } %>
+        </div>
+        <div class="col-12">
+            
+            <form action="/quiz/category/quiztitle/<%= title._id %>/addquestion" method="POST">
+
+                <div class="form-group">
+                    <label for="titleId">Title ID: </label>
+                    <input class="form-control" type="text" name="titleId" id="category"  value="<%= title._id %>" readonly>    
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input class="form-control" type="text" name="category" id="category"  value="<%= title.category %>" readonly>    
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Reviewer Title</label>
+                    <input class="form-control" type="text" name="title" id="title"  value="<%= title.title %>" readonly>    
+                </div>
+
+                <div class="form-group">
+                    <label for="question"> Question: </label>
+                    <input class="form-control" type="text" name="question" id="question" placeholder="type question here..." required>    
+                    <input class="form-control" type="text" placeholder="Question Image url" name="question_image">
+                    <input class="form-control" type="text" placeholder="Answer Image url " name="answer_image">
+
+                </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10"> <input type="text" name="answer" id="text" class="form-control" placeholder="A." required></div>
+        <div class="col-2">
+            <select name="correct" id="correct" class="form-control">
+                <option value="true">Correct</option> 
+                <option value="false">Wrong</option>
+            </select>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-10"> <input type="text" name="answer" id="text" class="form-control" placeholder="B." required></div>
+        <div class="col-2">
+            <select name="correct" id="correct" class="form-control">
+                <option value="true">Correct</option>
+                <option value="false">Wrong</option>
+            </select>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-10"> <input type="text" name="answer" id="text" class="form-control" placeholder="C." required></div>
+        <div class="col-2">
+            <select name="correct" id="correct" class="form-control">
+                <option value="true">Correct</option>
+                <option value="false">Wrong</option>
+            </select>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col-10"> <input type="text" name="answer" id="text" class="form-control" placeholder="D." required></div>
+        <div class="col-2">
+            <select name="correct" id="correct" class="form-control">
+                <option value="true">Correct</option>
+                <option value="false">Wrong</option>
+            </select>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label for="explanation">Explanation:</label>
+            <textarea name="explanation" class="form-control"> </textarea>
+        </div>
+        
+    </div>
+    <br>
+    <input type="submit" value="Save" class="btn btn-success btn-lg">
+</form>
+    <a href="/quiz/category/quiztitle/<%= title._id %>" class="btn btn-primary"> Back to <%= title.title %> </a>
+</div>
+      
+
+        
+
+      
+        
+    </div>
+</main>
+   
+
+
+
+
+
+
+
+<script src="/js/user.js">
+
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+ 
+window.setTimeout(function() {
+    $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+        $(this).remove(); 
+    });
+}, 5000);
+ 
+});
+</script>
+<%- include('../partials/footer'); %>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+   
+

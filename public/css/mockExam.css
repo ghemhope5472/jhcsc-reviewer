@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(250, 247, 245);
+}
+.answerRadio{
+    margin-left: 20px;
+}
+label{
+    font-weight: 500;
+}
+#quiz{
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+input[type="radio"]{
+    margin-right: 20px;
+}
+.hide{
+    display: none;
+}
+.outerDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#results{
+    color: green;
+}
+.ID{
+    font-size: 0;
+}
+.correctAnswer{
+    font-size: 0;
+}
+#no_of_items, #stbs, #cat, #title{
+    font-size: 0;
+}
+input[type="text"], input[type="number"]{
+    border: none;
+    outline: none;
+}

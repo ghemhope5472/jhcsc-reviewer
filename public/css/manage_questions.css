@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.categoryBox{
+    background-color: rgb(235, 235, 158);
+    height: 250px;
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.reviewerBox{
+    background-color: rgb(56, 228, 130);
+    height: 150px;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    padding: 0;
+}
+
+.questionBox{
+    background-color: rgb(230, 245, 229);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border-bottom: 1px solid rgba(78, 78, 78, 0.5) ;
+}
+.questionBox:nth-child(even){
+    background-color: rgb(239, 245, 245);
+}
+
+a.spacing{
+    
+    text-decoration: none;
+    cursor: auto;
+    color: rgb(27, 27, 27);
+    
+}
+
+
+.answerBox{
+    
+    margin-left: 1%;
+}
+.correctAnswer{
+    color: green;
+    font-weight: 800;
+    margin-top: 10px;
+}
+.question{
+    color: green;
+    font-weight: 700;
+}
+.buttonOptions{
+    
+    font-size: 12px;
+    
+}
+
+.boxOne{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.options{
+    display: inline;
+}
+
+    

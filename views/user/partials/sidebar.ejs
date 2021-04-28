@@ -1,0 +1,172 @@
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          
+            <div class="text-center d-sm-block d-none" style="padding: 10px;">
+                <img src="<%= user.thumbnail %>" class="img-fluid " width="150px">
+                </i> <br><span class="lead">  <%= user.name %></span>
+                <p style="font-size: 12px;"> 
+                   <%  if(!user.email){ %>
+                       Google Account
+                      <% }else{  %>
+                      <%= user.email %>
+                      <% }  %>
+                  <br> 
+                       <% if( user.role === "BASIC"){ %>
+                          STUDENT </p>
+                          <%  } %>
+                 
+                <p> </p>
+            </div>
+
+            <div id="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne" >
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="width: 100%;text-align: left;">
+                        <i class="fas fa-home  fa-fw me-3" style="color: #0b8abd;font-size: medium;">
+                          
+                        </i><span style="color: #050505;"></span>
+                        <a href="/auth/user/dashboard" style="color: #050505;text-decoration: none;"> Home </a>
+                      </button>
+                    </h5>
+                  </div>
+              
+                
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne"
+                        style="width: 100%;text-align: left;">
+                          <i class="fas fa-file-alt fa-fw me-3" style="color: #1ec93b; font-size: medium;"></i><span style="color: #050505; "> Review </span>
+                        </button>
+                      </h5>
+                    </div>
+                
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <a href="/users/category/general_education" class="ripple" style="text-decoration: none;color: gray;">
+                                        <span style="font-size: .8em; margin: 10px;"> General Education</span></a>
+                                    </div>
+                                    <div class="text-center">
+                                      <a href="/users/category/professional_education" class="ripple" style="text-decoration: none;color: gray;">
+                                      <span style="font-size: .8em; margin: 10px;"> Professional Education </span></a>
+                                    </div>
+
+                                      <div class="text-center">
+                                        <a href="/users/category/major" class="ripple" style="text-decoration: none;color: gray;">
+                                        <span style="font-size: .8em; margin: 10px;"> Major </span></a>
+                                      </div>
+
+                                </div>    
+                            </div>
+                    </div>
+                  </div>
+
+                  
+
+                  <div class="card">
+                    <div class="card-header" id="headingOne" >
+                      <h5 class="mb-0">
+                        
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseMock" aria-expanded="true" aria-controls="collapseOne"
+                        style="width: 100%;text-align: left;">
+                          <i class="fas fa-pencil-alt fa-fw me-3" style="color: #ec1c1c; font-size: medium;"></i><span style="color: #050505; "> Mock Exam </span>
+                        </button>
+                      </h5>
+                    </div>
+                  </div>
+
+
+                  <div id="collapseMock" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <a href="/users/mock_exam/general_education" class="ripple" style="text-decoration: none;color: gray;">
+                            <span style="font-size: .8em; margin: 10px;"> General Education</span></a>
+                        </div>
+                        <div class="text-center">
+                          <a href="/users/mock_exam/professional_education" class="ripple" style="text-decoration: none;color: gray;">
+                          <span style="font-size: .8em; margin: 10px;"> Professional Education </span></a>
+                        </div>
+
+                          <div class="text-center">
+                            <a href="/users/mock_exam/major" class="ripple" style="text-decoration: none;color: gray;">
+                            <span style="font-size: .8em; margin: 10px;"> Major </span></a>
+                          </div>
+
+                    </div>    
+                </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingOne" >
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="width: 100%;text-align: left;">
+                          <i class="far fa-star fa-fw me-3" style="color: #f7a816; font-size: medium;"></i>
+                          <a href="/users/score" style="color: #050505;text-decoration: none;"> My Scores </a>
+                        </button>
+                      </h5>
+                    </div>
+
+              </div>
+</div>
+        
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo-black.png" height="35" alt="" loading="lazy" />
+        </a>
+        
+
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+            <!-- Notification dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              
+      
+                 
+                
+              </a>
+            
+            </li>
+
+    
+
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="<%= user.thumbnail %>" class="rounded-circle" height="22"
+                alt="" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              
+              <li><a class="dropdown-item bg-success" href="/admin/logout" >Logout <%= user.name %></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>

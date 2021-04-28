@@ -1,0 +1,16 @@
+.quiztitle{
+    color: green;
+    font-size: 25px;
+}
+.category {
+    color: red;
+    font-size: 25px;
+}
+.alertDialog{
+    background: rgba(19, 121, 19, 0.5);
+    width: 100%;
+    text-align: center;
+}
+input[type='text']{
+    margin-bottom: 10px;
+}

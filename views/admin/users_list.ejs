@@ -1,0 +1,66 @@
+ 
+<%- include('../admin/partials/header'); %>
+<body>
+  <!--Main Navigation-->
+  <%- include('../admin/partials/sidebar'); %>
+  <!--Main Navigation-->
+ 
+ 
+ 
+ <!--Main layout-->
+ <main style="margin-top: 58px">
+  <div class="container pt-4">
+      <div class="card">
+        <div class="card-header text-center py-3">
+          <h5 class="mb-0 text-center">
+            <strong>Verified Users List</strong>
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col"> Account Type </th>
+                  <th scope="col"> Action</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+
+              <% verified_user.forEach( function(user) {  %>
+                  <tr>
+                      <td> <img src="<%= user.thumbnail %>" height="50px"></td>
+                      <th scope="row" style="padding-left: 10px;"> <%= user.name %></th>
+
+                      <% if(!user.email) { %>
+                          <td> Google Account </td>
+                          <%  }else{ %>
+                          <td> <%= user.email %> </td>
+                          <%  } %>
+                     <% if( user.role === "BASIC"){ %>
+                        <td> Student </td>
+                        <% } %>
+                      <td>
+                          <a href="/admin/user/<%= user.id %>/delete" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </a>
+                      </td>
+                    </tr>
+                    <%  })    %>            
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>  
+  </div>
+</main>
+<!--Main layout-->
+
+<script src="/js/user.js">
+
+</script>
+
+<%- include('../admin/partials/footer'); %>

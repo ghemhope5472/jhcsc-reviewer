@@ -1,0 +1,60 @@
+
+
+
+     
+<%- include('../admin/partials/header'); %>
+<link rel="stylesheet" href="/css/manage_questions.css">
+ 
+<body>
+  <!--Main Navigation-->
+  <%- include('../admin/partials/sidebar'); %>
+  <!--Main Navigation-->
+    
+
+  <main style="margin-top: 58px"> 
+    <div class="container pt-4">
+        <div class="container">
+            
+            
+              
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">Category</li>
+                 
+                </ol>
+              </nav>
+
+
+
+            <div class="row">
+                
+                <div class="col-12 col-sm-3 categoryBox">
+                    <h3>General Education</h3>
+                    <a href="/quiz/general_education" class="btn btn-primary"> Manage </a>
+                </div>
+                <div class="col-12 col-sm-3 categoryBox">
+                    <h3>Professional Education</h3>
+                    <a href="/quiz/prof_education" class="btn btn-primary"> Manage </a>
+                </div>
+                <div class="col-12 col-sm-3 categoryBox">
+                    <h3>Major</h3>
+                    <a href="/quiz/major" class="btn btn-primary"> Manage </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</main>
+   
+
+
+
+
+
+
+
+<script src="/js/user.js">
+
+</script>
+<%- include('../admin/partials/footer'); %>
+

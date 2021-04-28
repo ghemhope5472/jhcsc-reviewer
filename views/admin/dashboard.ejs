@@ -1,0 +1,119 @@
+
+<%- include('../admin/partials/header'); %>
+<body>
+  <!--Main Navigation-->
+  <%- include('../admin/partials/sidebar'); %>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+  
+ 
+  <section>
+    <div class="row">
+      <div class="col-xl-6 col-md-12 mb-4">
+        <div class="card" style="height: 200px;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between p-md-1">
+              <div class="d-flex flex-row">
+                <div class="align-self-center">
+                  <i class="fas fa-pencil-alt text-info fa-3x me-4"></i>
+                </div>
+                <div>
+                  <h4>Total </h4>
+                  <p class="mb-0">Questions</p>
+                </div>
+              </div>
+              <div class="align-self-center">
+                <h2 class="h1 mb-0" id="qL"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-12 mb-4">
+        <div class="card" style="height: 200px;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between p-md-1">
+              <div class="d-flex flex-row">
+                <div class="align-self-center">
+                  <i class="far fa-file-alt text-warning fa-3x me-4"></i>
+                 
+                </div>
+                <div>
+                  <h4>Total </h4>
+                  <p class="mb-0"> Reviewer Scores</p>
+                </div>
+              </div>
+              <div class="align-self-center">
+                <h2 class="h1 mb-0" id="scoreDisplay"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6 col-md-12 mb-4">
+          <div class="card" style="height: 200px;">
+            <div class="card-body">
+              <div class="d-flex justify-content-between p-md-1">
+                <div class="d-flex flex-row">
+                  <div class="align-self-center">
+                    <i class="far fa-user text-success fa-3x me-4"></i>
+                  </div>
+                  <div>
+                    <h4>Total </h4>
+                    <p class="mb-0">Registered Users</p>
+                  </div>
+                </div>
+                <div class="align-self-center">
+                  <h2 class="h1 mb-0" id="uL"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-md-12 mb-4">
+          <div class="card" style="height: 200px;">
+            <div class="card-body">
+              <div class="d-flex justify-content-between p-md-1">
+                <div class="d-flex flex-row">
+                  <div class="align-self-center">
+                    <i class="far fa-heart text-danger fa-3x me-4"></i>
+                  </div>
+                  <div>
+                    <h4>Total  </h4>
+                    <p class="mb-0">Reviewer Title</p>
+                  </div>
+                </div>
+                <div class="align-self-center">
+                  <h2 class="h1 mb-0" id="reviewers"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </section>
+  <!--Section: Statistics with subtitles-->
+
+      </section> 
+
+      
+
+    
+    </div>
+  </main>
+  <!--Main layout-->
+ 
+
+
+  <script src="/js/user.js"></script>
+  <script src="/js/scores.js"></script>
+  <script src="/js/questions.js"></script>
+  <script src="/js/reviewer.js"></script>
+
+  <%- include('../admin/partials/footer'); %>

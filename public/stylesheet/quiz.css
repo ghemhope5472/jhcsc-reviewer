@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+
+body{
+    background: #eee;
+}
+.col-12{
+    background-color: rgba(223, 221, 219,0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.questionDiv{
+    background-color: rgb(247, 239, 193);
+}
+
+:root {
+    --hue-neutral: 1990;
+    --hue-wrong: 0;
+    --hue-correct: 160;
+}
+
+
+.btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+.btnq{
+    --hue: var(--hue-neutral);
+    background-color: hsl( var(--hue), 100%, 60%);
+    border: 1px solid rgb(247, 246, 246);
+    
+    color: black;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: medium;
+}
+.btnq.correct{
+    --hue: var(--hue-correct);
+}
+.btnq.wrong{
+    --hue: var(--hue-wrong);
+}
+/* .start-btn, .next-btn{
+    
+} */
+
+.hide{
+    display: none;
+}
+
+.disable-click{
+    pointer-events: none; 
+}
+
+
+.ID{
+    font-size: 0; 
+}
+
+
+.btnq:hover{
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+}
+
+#scoreBox{
+    color: rgb(15, 160, 51);
+    text-shadow:
+   -1px -1px 0 rgb(255, 254, 254),  
+    1px -1px 0 rgb(250, 248, 248),
+    -1px 1px 0 rgb(248, 245, 245),
+     1px 1px 0 rgb(253, 251, 251);
+    font-size: 30px;
+   
+}
+#resultMessage{
+    font-family: 'Roboto Slab', serif;
+    font-size: larger;
+}
+.correctColor{
+    color: green;
+}
+.wrongColor{
+    color: red;
+}
+#stbs{
+    font-size: 0;
+    outline: none;
+    border: none;
+}
+.fromForm{
+    outline: none;
+    border: none;
+}
+.congrats, .scoreDisplay{
+    font-family: 'Roboto Slab', serif;
+    font-size: larger;
+    font-weight: 600;
+    color: rgb(46, 146, 240);
+    text-shadow:
+    -1px -1px 0 rgb(250, 246, 27),  
+     1px -1px 0 rgb(250, 246, 27),
+     -1px 1px 0 rgb(250, 246, 27),
+      1px 1px 0 rgb(250, 246, 27),
+}
+
+.commenSection{
+    display: flex;
+    justify-content: flex-start;
+    font-size: small;
+}
+#username{
+    color: cadetblue;
+}
+.img{
+    width: 10%;
+}
+.msg{
+    width: 70%;
+}
+.username{
+    width: 20%;
+}

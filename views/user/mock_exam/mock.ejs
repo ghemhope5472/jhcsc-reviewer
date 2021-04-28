@@ -1,0 +1,105 @@
+
+<link rel="stylesheet" href="/css/user-dashboard.css">
+<link rel="stylesheet" href="/css/mockExam.css">
+
+
+
+<%- include('../partials/header'); %>
+<body style="background-color: #FEFEFE;">
+  <!--Main Navigation-->
+  <%- include('../partials/sidebar'); %>
+  <!--Main Navigation-->
+
+
+
+
+ 
+  <main style="margin-top: 58px;">
+    <div class="container pt-4" >
+          <div>
+              <h3> <%= title.category %></h3>
+              <h4> <%= title.title %></h4>
+              
+               <p class="ID" id="titleId"><%= title._id %></p>
+               <p class="lead"> Direction: Click the radio button that corresponds to your answer. After selecting all choices, you can click Calculate Score button to get your score.</p>
+             
+               <div class="mainPage hide" id="mainPage" style="margin-bottom: 50px;">
+                        <div id="results"></div>
+                        
+                        <div id="quiz"></div>
+
+                        <form action="/users/mock_exam/<%= user._id %>/title/<%= title._id %>" method="POST">
+                              <input type="number" name="no_of_items" id="no_of_items" value="" > 
+                              <input type="number" name="stbs" value="" id="stbs"> 
+                              <input type="text" name="cat" value="<%= title.category %>" id="cat">
+                              <input type="text" name="title"value="<%= title.title %>" id="title">
+                        
+                            <div class="saveBtn">
+                                <button class="btn btn-primary btn-lg hide mb-4" id="saveBtn">Save Score </button>  
+                            </div>
+                        </form>
+
+
+
+                        <button id="submit" class="btn btn-success btn-lg mt-4"> Calculate score </button>
+               </div>
+               
+         
+               <div class="qouterDiv">
+                <div id="qspinnerDiv" style="text-align: center;">
+                    <div class="spinner-border text-success " role="status" >
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <h5>Loading questions...</h5>
+                    </div>
+                </div>
+                
+
+
+               <div class="outerDiv">
+                    <div id="spinnerDiv" class="hide" style="text-align: center;">
+                        <div class="spinner-border text-success " role="status" >
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <h5>Calculating your score...</h5>
+                    </div>
+               </div>
+                    
+
+
+
+
+
+            <audio id="correct">
+              <source src="/audio/correct.ogg" type="audio/ogg">
+            </audio>
+            <audio id="wrong">
+              <source src="/audio/wrong.ogg" type="audio/ogg">
+            </audio>
+
+     
+  
+     
+     
+
+    
+    </div>
+  </main>
+  
+
+
+
+
+  
+
+
+
+
+
+
+  <script src="/js/mock-exam2.js"></script>
+
+
+
+  
+  <%- include('../partials/footer'); %>

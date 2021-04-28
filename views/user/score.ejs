@@ -1,0 +1,80 @@
+
+
+
+<link rel="stylesheet" href="/css/user-dashboard.css">
+<%- include('../user/partials/header'); %>
+<body>
+  <!--Main Navigation-->
+  <%- include('../user/partials/sidebar'); %>
+  <!--Main Navigation-->
+
+
+
+
+ <!--Main layout-->
+ <main style="margin-top: 58px">
+    <div class="container pt-4">
+        <div class="card">
+          <div class="card-header text-center py-3">
+            <h5 class="mb-0 text-center">
+              <strong>My Score History</strong>
+            </h5>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th scope="col">Date Taken</th>
+                    <th scope="col">Reviewer Title</th>
+                    <th scope="col">Category</th>
+                    <th scope="col"> Score </th> 
+                  </tr>
+                </thead>
+                <tbody>
+  
+                    <% score.forEach( (score) => {  %>
+                    <tr>
+                        
+                        
+                            <td scope="row">
+                                    <%= score.Scoredate.toDateString() %>
+                                    <%= score.Scoredate.toLocaleTimeString() %>
+                                </td>
+                            <td>  <%= score.title %> </td>
+                            <td>  <%= score.cat %> - <%= score.examType %></td>
+                            <th> <%= score.score %> / <%= score.quizLength %> </th>
+
+
+                            
+                        
+                      
+                        
+                    </tr>
+                    <% }) %>      
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>  
+    </div>
+  </main>
+  <!--Main layout-->
+
+
+
+
+  <script src="/js/user.js">
+
+  </script>
+
+<script>
+
+
+
+
+</script>
+  
+
+  <%- include('../user/partials/footer'); %>

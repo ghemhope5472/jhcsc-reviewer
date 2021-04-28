@@ -1,0 +1,156 @@
+<header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          
+            <div class="text-center d-sm-block d-none" style="padding: 10px;">
+                <img src="<%= user.thumbnail %>" class="img-fluid " width="150px">
+                </i> <br><span class="lead">  <%= user.name %></span>
+                <p style="font-size: 12px;"> <%= user.email %><br> 
+                    Account Type: <%= user.role %></p>
+                <p> </p>
+            </div>
+
+            <div id="accordion">
+
+              <div class="card">
+                <div class="card-header" id="headingOne" >
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="width: 100%;text-align: left;">
+                      
+                        <i class="fas fa-tachometer-alt fa-fw me-3"  style="color: #f7a816; font-size: medium;"></i>
+                      </i>
+                      <a href="/admin/dashboard" style="color: #050505;text-decoration: none;"> Dashboard </a>
+                    </button>
+                  </h5>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingOne" >
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="width: 100%;text-align: left;">
+                        <i class="fas fa-users fa-fw me-3" style="color: #469cec;"></i><span style="color: #050505;"> Users </span>
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="text-center">
+                        <a href="/admin/pending_users" class="ripple" style="text-decoration: none;color: gray;">
+                          <span style="font-size: .8em;"> Pending Users</span></a>
+                        </div>                         
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                        <a href="/admin/users_list" class="ripple" style="text-decoration: none;color: gray;">
+                          <span style="font-size: .8em;"> Verified Users List</span></a>
+                        </div>                         
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne"
+                        style="width: 100%;text-align: left;">
+                          <i class="fas fa-file-alt fa-fw me-3" style="color: #7a128f;"></i><span style="color: #050505;"> Questions </span>
+                        </button>
+                      </h5>
+                    </div>
+                
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="text-center">
+                            <a href="/admin/manage_questions" class="ripple" style="text-decoration: none;color: gray;">
+                              <span style="font-size: .8em;"> Manage Questions</span></a>
+                            </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingOne" >
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="width: 100%;text-align: left;">
+                      
+                      <i class="fas fa-paper-plane fa-fw me-3"  style="color: #c8db1d; font-size: medium;"></i>
+                        
+                      </i>
+                      <a href="/admin/view_user_feeds" style="color: #050505;text-decoration: none;"> User Feeds </a>
+                    </button>
+                  </h5>
+                </div>
+
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo-black.png" height="35" alt="" loading="lazy" />
+        </a>
+        
+
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+            <!-- Notification dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-bell"></i>
+      
+                  <span class="badge rounded-pill badge-notification bg-danger" id="notification_badge"> 5</span>
+                 
+                  <span class="badge rounded-pill badge-notification bg-danger"></span>
+                 
+                
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+               
+                        <li><a class="dropdown-item" href="/admin/pending_users" id="notification_message"> You have users waiting for approval!
+                        </a></li>
+                        
+                        
+                        
+                     
+                
+              </ul>
+            </li>
+
+    
+
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="<%= user.thumbnail %>" class="rounded-circle" height="22"
+                alt="" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              
+              <li><a class="dropdown-item bg-success" href="/admin/logout" >Logout <%= user.name %></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>

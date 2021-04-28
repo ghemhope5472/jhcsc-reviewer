@@ -1,0 +1,15 @@
+.row{
+    height: 100vh;
+}
+.sideNav{
+    background-color: rgb(255, 251, 251);
+    height: 500px;
+    margin-left: 25px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(155, 154, 154, 0.5);
+    background-image: url('/images/dashboard-side.png');
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+}
+
