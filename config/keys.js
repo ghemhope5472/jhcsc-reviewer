@@ -1,7 +1,7 @@
 
 
-dbPassword = 'mongodb://localhost:27017/caps';
-// dbPassword='mongodb+srv://ghemhope:ghemhope@cluster0.n1xnq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+// dbPassword = 'mongodb://localhost:27017/caps';
+dbPassword='mongodb+srv://ghemhope:ghemhope@cluster0.n1xnq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 // dbPassword = 'mongodb+srv://ghemhope:'+ encodeURIComponent('ghemhope') + '@cluster0.n1xnq.mongodb.net/myFirstDatabase?retryWrites=true';
 
 
