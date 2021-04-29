@@ -1,5 +1,10 @@
 body{
-    background: #858685;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #9e9e9d, #f5f7f6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #9e9e9d, #f5f7f6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background-image: url('/images/full-bg.jpg');
+   
+   background-size: cover;
+   background-repeat: no-repeat;
+
+}
+html{
+    height: 100%;
 }

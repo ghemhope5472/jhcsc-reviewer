@@ -1,0 +1,104 @@
+
+     
+<%- include('../partials/header'); %>
+<link rel="stylesheet" href="/css/manage_questions.css">
+ 
+<body>
+  <!--Main Navigation-->
+  <%- include('../partials/sidebar'); %>
+  <!--Main Navigation-->
+    
+
+  <main style="margin-top: 58px"> 
+    <div class="container pt-4">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"> <a href="/admin/manage_questions">Category</a></li>
+          <li class="breadcrumb-item">  Search Result </li>
+         
+        </ol>
+      </nav>
+
+     
+           
+      
+            <div class="row">
+              <div class="col-12 col-sm-3">
+                 <form action="/quiz/search" method="GET">
+                    <div class="form-group" style="display: flex;">
+                      <input 
+                        type="search"
+                        name="search" 
+                        placeholder="Enter keyword..." 
+                        class="form-control mr-sm-2"
+                        autocomplete="off"
+                        style="margin-right:0 !important;">
+                      <button style="margin-left: 0;" class="btn btn-outline-success my-2 my-sm-0"> <i class="fas fa-search" ></i> </button>
+                    </div>
+                 </form>
+              </div>
+            </div>
+
+            <p class="lead">Search result for  <strong style="color: green;"> "<%= keyword %>" </strong></p> 
+            <hr>
+            <% foundquestion.forEach( (question) =>{ %>
+                        <div class="result">
+                           
+                            <p> <%=  question.question %></p>
+                            <a href="/quiz/category/quiztitle/<%= question.titleId %>/edit_question/<%= question._id %>" class="btn btn-warning buttonOptions"> Edit</a>
+                            <form action="/quiz/quiztitle/<%= question.titleId %>/question/delete/<%= question._id %>?_method=DELETE" method="POST" class="options">
+                               
+                                <input type="submit" class="btn btn-danger" value="Delete">
+
+                            </form>
+                            <hr> 
+
+                        </div>
+                <% }) %>
+    
+            
+  
+    
+
+       
+    
+      
+
+        
+
+      
+        
+    </div>
+</main>
+   
+
+
+
+
+
+
+
+<script src="/js/user.js">
+
+</script>
+<%- include('../partials/footer'); %>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+   

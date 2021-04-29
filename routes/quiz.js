@@ -244,6 +244,37 @@ router.get('/category/quiztitle/:id/viewquestions', ensureAuthenticatedAdmin,isA
 
 
 
+//search result
+router.get('/search',(req, res)=>{
+            console.log(req.query.search)
+          if(req.query.search){
+            
+            const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+            console.log(`From regex var ${regex}`)
+
+            Question.find( {question: regex}, (err,foundquestion)=>{
+              if(err){
+                console.log(err)
+              }else{
+                console.log(foundquestion)
+                res.render('admin/questions/result', { foundquestion, user: req.user, keyword: req.query.search})
+              }
+            })
+          
+          }else{
+            console.log("Not searching")
+          }
+})
+
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
+
+
+
+
 
 //view edit question form
 router.get('/category/quiztitle/:titleId/edit_question/:qid',  ensureAuthenticatedAdmin, isAdmin, (req,res) => {

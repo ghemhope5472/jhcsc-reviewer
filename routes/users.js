@@ -239,7 +239,7 @@ router.post('/add/:scoreId', (req ,res ) => {
 })
 
 
-// redirec user when not verified
+// redirect user when not verified
 router.get('/not_verified', (req,res) =>{
     res.render('error/not_verified', {user: req.user})
 })
