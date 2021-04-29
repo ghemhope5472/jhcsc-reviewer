@@ -54,7 +54,7 @@ module.exports = function( passport ){
             
             clientID: keys.google.clientID,
             clientSecret: keys.google.clientSecret,
-            callbackURL: '/auth/google/redirect' 
+            callbackURL: 'https://jhcscbleptreview.herokuapp.com/auth/google/redirect' 
         },
         (accessToken, refreshToken, profile, done) => {
     
