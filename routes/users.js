@@ -248,13 +248,13 @@ router.get('/not_verified', (req,res) =>{
 
 
 //mock exam
-router.get('/mockExam', (req,res) => {
+router.get('/mockExam',isVerified, (req,res) => {
     res.render('user/select_reviewer', {user: req.user})
 })
 
 
 //mock exam for genEd
-router.get('/mock_exam/general_education', (req, res) => {
+router.get('/mock_exam/general_education', isVerified, (req, res) => {
     QuizTitle.find({ category: "General Education"})
     .then( (title) => {
         res.render('user/mock_exam/general_education',{ title, user:req.user })
@@ -264,7 +264,7 @@ router.get('/mock_exam/general_education', (req, res) => {
 })
 
 //mock exam for profEd
-router.get('/mock_exam/professional_education', (req, res) => {
+router.get('/mock_exam/professional_education',isVerified, (req, res) => {
     QuizTitle.find({ category: "Professional Education"})
     .then( (title) => {
         res.render('user/mock_exam/professional_education',{ title, user:req.user })
@@ -275,7 +275,7 @@ router.get('/mock_exam/professional_education', (req, res) => {
 
 
 //mock exam for major
-router.get('/mock_exam/major', (req, res) => {
+router.get('/mock_exam/major', isVerified, (req, res) => {
     QuizTitle.find({ category: "Major"})
     .then( (title) => {
         res.render('user/mock_exam/major',{ title, user:req.user })
@@ -286,7 +286,7 @@ router.get('/mock_exam/major', (req, res) => {
 
 
 //view mock exam page by category and title
-router.get('/mock_exam/title/:id', (req,res) => {
+router.get('/mock_exam/title/:id',isVerified, (req,res) => {
     QuizTitle.findById(req.params.id)
     .then( data => {
           res.render('user/mock_exam/mock', { title: data,  user:req.user  })
