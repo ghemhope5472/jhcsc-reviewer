@@ -11,16 +11,16 @@
  
   <main style="margin-top: 58px;">
     <div class="container pt-4" >
-          <div>
+          <div class="paper">
               <h3> <%= title.category %></h3>
               <h4> <%= title.title %></h4>
               <h6> No. of Questions:  <span id="questionBox"></span> </h6>
                <p class="ID" id="titleId"><%= title._id %></p>
                <p class="ID" id="userId"><%= user._id %></p>
                <hr>
-            <p class="scoreText">Score:  <span id="scoreBox"> </span></p>
+            <p class="scoreText" style="margin-bottom: 0;">Score:  <span id="scoreBox"> </span></p>
           </div>
-            <div id="questionsContainer" class="hide animate__animated animate__backInRight">
+            <div id="questionsContainer" class="hide animate__animated animate__backInRight paper" style="margin-top: 0;">
                 <div id="question">Question</div>
                 <div id="question_image">
                   <img id="qImg" src="" alt="question_img" class="img-fluid">
@@ -37,15 +37,15 @@
                
             </div>
           
-            <p id="resultMessage"></p>
+            <p id="resultMessage" class="paper" style="margin-bottom: 0;"></p>
             
-            <div class="controls"> 
+            <div class="controls paper quizBtns" > 
                 <button id="start-button" class="start-btn btn btn-success btn-lg">Start</button>
-                <button id="next-button" class="next-btn btn hide">Next</button>
-                <button id="save-button" class="next-btn btn hide">Save Score</button>
+                <button id="next-button" class="next-btn btn-primary btn hide btn-lg">Next</button>
+                <button id="save-button" class="next-btn btn-primary btn hide btn-lg">Save Score</button>
             </div>
-            <div id="explanationDiv" class="hide"> 
-              <p>Explanation</p>
+            <div id="explanationDiv" class=" paper"> 
+              <p class="paper">Explanation</p>
             </div>
 
 

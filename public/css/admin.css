@@ -37,3 +37,18 @@ body {
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
+
+.card-body:first-child{
+  background-image: url('/images/card1.jpg');
+  background-size: cover;
+  
+}
+.info{
+  margin-top: 13%;
+}
+body{
+  background-image: url('/images/bg-dashboard.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+}

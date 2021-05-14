@@ -1,6 +1,7 @@
 
 
 <link rel="stylesheet" href="/css/user-dashboard.css">
+
 <%- include('../user/partials/header'); %>
 <body>
   <!--Main Navigation-->
@@ -13,8 +14,8 @@
   <!--Main Navigation-->
 
   <!--Main layout-->
-  <main style="margin-top: 58px">
-    <div class="container pt-4">
+  <main style="margin-top: 58px;">
+    <div class="container pt-4" >
   
  
         
@@ -26,7 +27,7 @@
           <% score.forEach( (score) => { %>
 
 
-          <div class="col-12 col-sm-7 outer">
+          <div class="col-12 col-sm-7 outer" style="background-color: darkmagenta;">
             <div class="timeBox">  <%= score.Scoredate.toDateString() %> <%= score.Scoredate.toLocaleTimeString() %> </div>
               <div class="innerBox">
                 
@@ -147,5 +148,5 @@
 
 </script>
   
-
+</body>
   <%- include('../user/partials/footer'); %>

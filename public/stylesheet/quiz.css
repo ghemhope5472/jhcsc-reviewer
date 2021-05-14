@@ -124,3 +124,19 @@ body{
 .username{
     width: 20%;
 }
+.paper{
+    /* background-image: url('/images/paper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    color: black; */
+    background: #FFEFBA;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding: 20px;
+   
+}
+.quizBtns{
+    color: blue;
+}

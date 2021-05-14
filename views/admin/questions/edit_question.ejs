@@ -38,16 +38,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             
             <%   } %>
         </div>
-        <div class="col-12">
+        <div class="col-12" style="background-color: blanchedalmond;">
             
           
            
-            <form 
+            <form  
                 
                 action="/quiz/category/quiztitle/<%= quizTitleId %>/edit_question/<%= question._id %>?_method=PUT"
                 method="POST"
                 >
-                <div class="form-group">
+                <div class="form-group" >
                     <label for="question"> Question: </label>
                     <input 
                     class="form-control" 
@@ -56,7 +56,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     id="question" 
                     value="<%= question.question %>"
                     placeholder="type question here..." 
-                    required>   
+                    >   
                     <label for="question_image">Question Image URL:</label>  
                     <input 
                         class="form-control" 
@@ -80,7 +80,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        
 
 
-        <div class="row">
+        <div class="row" style="background-color: blanchedalmond;">
                 <div class="col-10"> 
                     <input 
                     type="text" 
@@ -91,7 +91,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     placeholder="A." 
                     required>
                 </div>
-        <div class="col-2">
+        <div class="col-2" style="background-color: blanchedalmond;">
             <select name="correct" id="correct" class="form-control"  >
                 <option value="<%=question.answers[0].correct %>" selected > 
                    <% if(question.answers[0].correct === true){ %>
@@ -107,7 +107,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
                 
     </div>
-    <div class="row">
+    <div class="row" style="background-color: blanchedalmond;">
         <div class="col-10"> 
             <input 
                 type="text" 
@@ -134,8 +134,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
                 
     </div>
-    <div class="row">
-        <div class="col-10"> 
+    <div class="row" style="background-color: blanchedalmond;">
+        <div class="col-10" > 
             <input 
                 type="text" 
                 name="answer" 
@@ -160,7 +160,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
         
     </div>
-    <div class="row">
+    <div class="row" style="background-color: blanchedalmond;">
         <div class="col-10"> 
             <input 
                 type="text" 
@@ -187,8 +187,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
        
     </div>
-    <div class="row">
-        <div class="col-12">
+    <div class="row" style="background-color: blanchedalmond;">
+        <div class="col-12" style="padding: 20px;">
             <label for="explanation">Explanation:</label>
             <textarea name="explanation" class="form-control">
                 <%= question.explanation %>
@@ -202,6 +202,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <a href="/quiz/category/quiztitle/<%= quizTitleId %>/viewquestions" class="btn btn-primary"> Back</a>
 </div>
       
+
+
 
         
 

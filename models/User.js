@@ -27,7 +27,7 @@ const UserSchema  = new mongoose.Schema({
     },
     thumbnail: {
         type: String,
-        default: 'https://images2.imgbox.com/f1/66/RUy6P8wz_o.jpg'
+        default: 'https://images2.imgbox.com/3b/bc/U6zmst4t_o.png'
     },
    
     googleId: String
