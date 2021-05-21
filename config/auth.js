@@ -3,8 +3,8 @@ module.exports = {
         if(req.isAuthenticated()){
             return next();
         }
-        req.flash('error_msg', 'Please login to view this page');
-        res.redirect('/users/login');
+        
+        res.render('user/error');
     },
     ensureAuthenticatedAdmin: function(req,res,next){
         if(req.isAuthenticated()){

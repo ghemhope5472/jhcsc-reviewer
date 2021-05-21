@@ -5,7 +5,7 @@ const bcrypt            = require('bcryptjs')
 const passport          = require('passport')
 const Quiztitle         = require('../models/QuizTitle')
 const Score             = require('../models/Score')
-const { ensureAuthenticatedAdmin, isAdmin,isVerified} = require('../config/auth')
+const { ensureAuthenticated, ensureAuthenticatedAdmin, isAdmin,isVerified} = require('../config/auth')
 const QuizTitle = require('../models/QuizTitle')
 
 //Login Page
@@ -111,7 +111,7 @@ router.get('/logout', (req, res) => {
 
 
 // view general education category
-router.get('/category/general_education', isVerified, (req,res) => {
+router.get('/category/general_education',ensureAuthenticated, isVerified, (req,res) => {
     Quiztitle.find({ category: "General Education"})
     .then( (title) => {
         res.render('user/gen_ed', { title, user:req.user})
@@ -123,7 +123,7 @@ router.get('/category/general_education', isVerified, (req,res) => {
 
 
 // view prof education category
-router.get('/category/professional_education',isVerified, (req,res) => {
+router.get('/category/professional_education',ensureAuthenticated,isVerified, (req,res) => {
     Quiztitle.find({ category: "Professional Education"})
     .then( (title) => {
         res.render('user/prof_ed', { title, user:req.user})
@@ -135,7 +135,7 @@ router.get('/category/professional_education',isVerified, (req,res) => {
 
 
 // view major  category
-router.get('/category/major', isVerified, (req,res) => {
+router.get('/category/major',ensureAuthenticated, isVerified, (req,res) => {
     Quiztitle.find({ category: "Major"})
     .then( (title) => {
         res.render('user/major', { title, user:req.user})
@@ -172,7 +172,7 @@ router.post('/:userId/title/:titleId', (req, res) => {
 
 
 //dispplkay score in user dashboard
-router.get('/score', (req, res) =>{
+router.get('/score', ensureAuthenticated, (req, res) =>{
     Score.find({userId: req.user.id})
     .then( (score ) => {
         res.render('user/score', { score, user: req.user})
@@ -248,13 +248,13 @@ router.get('/not_verified', (req,res) =>{
 
 
 //mock exam
-router.get('/mockExam',isVerified, (req,res) => {
+router.get('/mockExam', ensureAuthenticated, isVerified, (req,res) => {
     res.render('user/select_reviewer', {user: req.user})
 })
 
 
 //mock exam for genEd
-router.get('/mock_exam/general_education', isVerified, (req, res) => {
+router.get('/mock_exam/general_education',ensureAuthenticated,  isVerified, (req, res) => {
     QuizTitle.find({ category: "General Education"})
     .then( (title) => {
         res.render('user/mock_exam/general_education',{ title, user:req.user })
@@ -264,7 +264,7 @@ router.get('/mock_exam/general_education', isVerified, (req, res) => {
 })
 
 //mock exam for profEd
-router.get('/mock_exam/professional_education',isVerified, (req, res) => {
+router.get('/mock_exam/professional_education',ensureAuthenticated,isVerified, (req, res) => {
     QuizTitle.find({ category: "Professional Education"})
     .then( (title) => {
         res.render('user/mock_exam/professional_education',{ title, user:req.user })
@@ -275,7 +275,7 @@ router.get('/mock_exam/professional_education',isVerified, (req, res) => {
 
 
 //mock exam for major
-router.get('/mock_exam/major', isVerified, (req, res) => {
+router.get('/mock_exam/major',ensureAuthenticated, isVerified, (req, res) => {
     QuizTitle.find({ category: "Major"})
     .then( (title) => {
         res.render('user/mock_exam/major',{ title, user:req.user })
@@ -286,7 +286,7 @@ router.get('/mock_exam/major', isVerified, (req, res) => {
 
 
 //view mock exam page by category and title
-router.get('/mock_exam/title/:id',isVerified, (req,res) => {
+router.get('/mock_exam/title/:id',ensureAuthenticated, isVerified, (req,res) => {
     QuizTitle.findById(req.params.id)
     .then( data => {
           res.render('user/mock_exam/mock', { title: data,  user:req.user  })

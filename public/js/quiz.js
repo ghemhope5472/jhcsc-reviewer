@@ -18,6 +18,9 @@ const image_element = document.getElementById('image_element')
 const q_img = document.getElementById("qImg")
 const a_img = document.getElementById("aImg")
 
+const total_numbers = document.getElementById('total_numbers')
+const current_number = document.getElementById('current_number')
+
 
 let userScore = 0;
 let savedScore = 0;
@@ -114,9 +117,12 @@ function startGame(){
 
 function setNextQuestion(){
     // document.getElementById('resultMessage').classList.add('hide')
+   
+        
         resetImage()
         resetState()
         showQuestion(shuffledQuestions[currentQuestionIndex]);
+        current_number.innerHTML = currentQuestionIndex + 1;
        
 }
 
@@ -273,6 +279,7 @@ function clearStatusClass(element){
 const quizlength = questions.length;
 const lengthDisplay = document.getElementById('questionBox')
 lengthDisplay.innerHTML = quizlength;
+total_numbers.innerHTML = quizlength;
 
     
 }

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
+
+.btn.btn-success{
+    background: #00F260;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    font-size: medium;
+    font-family: 'Roboto Slab', serif !important;
+    transition: ease-in-out;
+    
+
+}
+.btn.btn-success:hover{
+    background: #038838;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #045fb9, #04a745);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #045fb9, #04a745); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+.btn.btn-secondary{
+    background: #FC5C7D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    font-size: medium;
+    font-family: 'Roboto Slab', serif !important;
+
+}
+.btn.btn-secondary:hover{
+    background: #FC5C7D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4c5db6, #b44259);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4c5db6, #b44259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    font-size: medium;
+    font-family: 'Roboto Slab', serif !important;
+
+}
+body{
+    font-family: 'Roboto Slab', serif !important;
+}
+.dashboard{
+    background-color: black;
+}
+.btn-danger{
+    color: white;
+    font-size: medium;
+}

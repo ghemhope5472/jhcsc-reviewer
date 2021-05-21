@@ -24,9 +24,9 @@
          
         <div class="row">
 
-          <% score.forEach( (score) => { %>
+          <% score.slice().reverse().forEach( (score) => { %>
 
-
+            
           <div class="col-12 col-sm-7 outer" style="background-color: darkmagenta;">
             <div class="timeBox">  <%= score.Scoredate.toDateString() %> <%= score.Scoredate.toLocaleTimeString() %> </div>
               <div class="innerBox">

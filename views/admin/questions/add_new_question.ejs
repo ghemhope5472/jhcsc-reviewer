@@ -23,7 +23,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             <% if(success_msg != ''){  %>
             
                 
-                    <div class="alert alert-danger alertDialog" role="alert">
+                    <div class="alert alert-success alertDialog" role="alert">
                         <%= success_msg %>
                       </div>
                       <%  }else { %>    
@@ -52,8 +52,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <div class="form-group">
                     <label for="question"> Question: </label>
                     <input class="form-control" type="text" name="question" id="question" placeholder="type question here..." required>    
-                    <input class="form-control" type="text" placeholder="Question Image url" name="question_image">
-                    <input class="form-control" type="text" placeholder="Answer Image url " name="answer_image">
+                    <input class="form-control" type="text" placeholder="Question Image url(Optional)" name="question_image">
+                    <input class="form-control" type="text" placeholder="Answer Image url(Optional) " name="answer_image">
 
                 </div>
             
@@ -63,8 +63,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <div class="col-10"> <input type="text" name="answer" id="text" class="form-control" placeholder="A." required></div>
         <div class="col-2">
             <select name="correct" id="correct" class="form-control">
-                <option value="true">Correct</option> 
                 <option value="false">Wrong</option>
+                <option value="true">Correct</option> 
+                
             </select>
         </div>
         
@@ -73,8 +74,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <div class="col-10"> <input type="text" name="answer" id="text" class="form-control" placeholder="B." required></div>
         <div class="col-2">
             <select name="correct" id="correct" class="form-control">
-                <option value="true">Correct</option>
                 <option value="false">Wrong</option>
+                <option value="true">Correct</option>
+                
             </select>
         </div>
         
@@ -83,8 +85,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <div class="col-10"> <input type="text" name="answer" id="text" class="form-control" placeholder="C." required></div>
         <div class="col-2">
             <select name="correct" id="correct" class="form-control">
-                <option value="true">Correct</option>
                 <option value="false">Wrong</option>
+                <option value="true">Correct</option>
+                
             </select>
         </div>
        
@@ -93,8 +96,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         <div class="col-10"> <input type="text" name="answer" id="text" class="form-control" placeholder="D." required></div>
         <div class="col-2">
             <select name="correct" id="correct" class="form-control">
-                <option value="true">Correct</option>
                 <option value="false">Wrong</option>
+                <option value="true">Correct</option>
+               
             </select>
         </div>
        
