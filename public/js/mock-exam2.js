@@ -200,12 +200,35 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 	}
 
 	// show number of correct answers out of total
-		resultsContainer.innerHTML = 
+		
+	// resultsContainer.innerHTML = 
+	// 	`
+	// 	<h4>Greaert Job! You have successfully finished your Mock Exam!</h4>
+	// 	<h4> Score: ${numCorrect}  out of  ${questions.length}
+	// 	<h5>Scroll down to review your answers. Don't forget to save your score.</h5>
+	// 	`
+		if(numCorrect >= 75 ){
+			resultsContainer.innerHTML = 
 		`
 		<h4>Great Job! You have successfully finished your Mock Exam!</h4>
 		<h4> Score: ${numCorrect}  out of  ${questions.length}
 		<h5>Scroll down to review your answers. Don't forget to save your score.</h5>
 		`
+		}else if( numCorrect <= 74 && numCorrect >= 50 ){
+			resultsContainer.innerHTML = 
+		`
+		<h4>Way to Go! You have successfully finished your Mock Exam!</h4>
+		<h4> Score: ${numCorrect}  out of  ${questions.length}
+		<h5>Scroll down to review your answers. Don't forget to save your score.</h5>
+		`
+		}else{
+			resultsContainer.innerHTML = 
+			`
+			<h4>Keep working on it! You have successfully finished your Mock Exam!</h4>
+			<h4> Score: ${numCorrect}  out of  ${questions.length}
+			<h5>Scroll down to review your answers. Don't forget to save your score.</h5>
+			`
+		}
 		
 		document.getElementById('results').classList.add('hide')
 		document.getElementById('quiz').classList.add('hide')
