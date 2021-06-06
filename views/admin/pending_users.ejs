@@ -40,7 +40,14 @@
                         </div>
                         <div class="text-end">
                           <h6> <%= user.name %> </h6>
-                          <p style="font-size: 10px;"> <%= user.date.toLocaleDateString() %></p>
+                         <% if(!user.email){ %>
+                            <p style="font-size: 10px;margin-bottom: 0;">  Google Account </p>
+                            <% }else{ %>
+                            <p style="font-size: 10px;margin-bottom: 0;"> <%= user.email %></p>
+                            <% } %>
+                         
+
+                          <p style="font-size: 10px;margin-bottom: 0;"> <%= user.date.toLocaleDateString() %></p>
                           <a href="/admin/user/<%= user.id %>" class="btn btn-success" > Accept </a>
                           
                         </div>
